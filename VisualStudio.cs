@@ -165,7 +165,7 @@
                 if (currentDistance > minimumDistance)
                     continue;
                 if (currentDistance == 0.0)
-                    return color.Key;
+                    return string.Concat(inputColor.A.ToString("X2"), color.Key);
                 minimumDistance = currentDistance;
                 nearestColor = color.Key;
             }
