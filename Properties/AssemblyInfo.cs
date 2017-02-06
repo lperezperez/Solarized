@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 #endif
 [assembly: AssemblyDescription("Solarized color schema generator.")]
 [assembly: AssemblyProduct("Solarized.Generator")]
-[assembly: AssemblyFileVersion("1.0.0.2")]
+[assembly: AssemblyFileVersion("1.0.0.3")]
 [assembly: AssemblyInformationalVersion("1.0 Alpha")]
 [assembly: AssemblyTitle("Solarized generator")]
 [assembly: AssemblyVersion("1.0")]

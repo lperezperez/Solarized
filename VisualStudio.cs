@@ -40,7 +40,18 @@
                                 if (xmlReader.LocalName == "Theme" && xmlReader.HasAttributes)
                                 {
                                     while (xmlReader.MoveToNextAttribute())
-                                        xmlWriter.WriteAttributeString(xmlReader.Name, xmlReader.Name == "Name" ? "$ThemeName" : xmlReader.Value);
+                                        switch (xmlReader.Name)
+                                        {
+                                            case "Name":
+                                                xmlWriter.WriteAttributeString(xmlReader.Name, "$ThemeName");
+                                                break;
+                                            case "GUID":
+                                                xmlWriter.WriteAttributeString(xmlReader.Name, "$GUID");
+                                                break;
+                                            default:
+                                                xmlWriter.WriteAttributeString(xmlReader.Name, xmlReader.Value);
+                                                break;
+                                        }
                                     xmlReader.MoveToElement();
                                 }
                                 else if ((xmlReader.LocalName == "Background" || xmlReader.LocalName == "Foreground") && xmlReader.HasAttributes)
@@ -89,8 +100,23 @@
                                     if (xmlReader.LocalName == "Theme" && xmlReader.HasAttributes)
                                     {
                                         while (xmlReader.MoveToNextAttribute())
-                                        {
-                                            xmlWriterDark.WriteAttributeString(xmlReader.Name, xmlReader.Name == "Name" ? VisualStudio.ThemeDark : xmlReader.Value);
+                                    switch (xmlReader.Name)
+                                    {
+                                        case "Name":
+                                            xmlWriterDark.WriteAttributeString(xmlReader.Name, VisualStudio.ThemeDark);
+                                            xmlWriterLight.WriteAttributeString(xmlReader.Name, VisualStudio.ThemeLight);
+                                            break;
+                                        case "GUID":
+                                            xmlWriterDark.WriteAttributeString(xmlReader.Name, "{4f4527a7-e5d3-4382-8ba0-126c0f0d3fe9}");
+                                            xmlWriterLight.WriteAttributeString(xmlReader.Name, "{4d3b11ea-fd11-48f8-a8df-6911f7a5d892}");
+                                            break;
+                                        default:
+                                            xmlWriterDark.WriteAttributeString(xmlReader.Name, xmlReader.Value);
+                                            xmlWriterLight.WriteAttributeString(xmlReader.Name, xmlReader.Value);
+                                            break;
+                                    }
+                                {
+                                    xmlWriterDark.WriteAttributeString(xmlReader.Name, xmlReader.Name == "Name" ? VisualStudio.ThemeDark : xmlReader.Value);
                                             xmlWriterLight.WriteAttributeString(xmlReader.Name, xmlReader.Name == "Name" ? VisualStudio.ThemeLight : xmlReader.Value);
                                         }
                                         xmlReader.MoveToElement();
