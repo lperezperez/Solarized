@@ -125,7 +125,7 @@
   </data>
   <data name="ApplicationInfo" xml:space="preserve">
     <value>{0} {1}
-Solarized (http://ethanschoonover.com/solarized) color schema generator for Microsoft Visual Studio 2015.</value>
+Solarized (http://ethanschoonover.com/solarized) theme generator for Microsoft Visual Studio {2}.</value>
   </data>
   <data name="CreateTemplate" xml:space="preserve">
     <value>Creates a template file from the specified dark or light theme.</value>

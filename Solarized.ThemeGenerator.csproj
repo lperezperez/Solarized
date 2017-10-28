@@ -7,8 +7,8 @@
     <ProjectGuid>{26F64443-2055-4CBB-A97C-54A7FB96F616}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solarized.Generator</RootNamespace>
-    <AssemblyName>sg</AssemblyName>
+    <RootNamespace>Solarized.ThemeGenerator</RootNamespace>
+    <AssemblyName>stg</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -37,9 +37,12 @@
     <ApplicationIcon>Solarized.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Solarized.Generator.Program</StartupObject>
+    <StartupObject>Solarized.ThemeGenerator.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Colors.cs" />
+    <Compile Include="ColorScheme.cs" />
+    <Compile Include="Generators\Cmd.cs" />
     <Compile Include="Palette.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,11 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="VisualStudio.cs" />
+    <Compile Include="Generators\VisualStudio.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Solarized.ico" />
-    <Content Include="VSTheme.Template.2015.xml">
+    <Content Include="VSTheme.Template.2017.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
@@ -60,10 +63,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Console.Template.reg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.ca-ES.resx">
       <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es-ES.resx">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -71,9 +76,13 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>packages\JetBrains.Annotations.10.2.1\lib\net\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="NDesk.Options, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
     </Reference>
@@ -81,6 +90,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.XML" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

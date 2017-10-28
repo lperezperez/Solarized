@@ -105,7 +105,7 @@
   </data>
   <data name="ApplicationInfo" xml:space="preserve">
     <value>{0} {1}
-Generador d'esquemes de color Solarized (http://ethanschoonover.com/solarized) per Microsoft Visual Studio 2015.</value>
+Generador de temes de color Solarized (http://ethanschoonover.com/solarized) per Microsoft Visual Studio {2}.</value>
   </data>
   <data name="CreateTemplate" xml:space="preserve">
     <value>Crea una plantilla a partir del tema clar o obscur indicat.</value>

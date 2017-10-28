@@ -1,49 +1,50 @@
-﻿namespace Solarized.Generator
+﻿namespace Solarized.ThemeGenerator
 {
     using System.Drawing;
-    using System.Globalization;
     /// <summary>Solarized colors palette.</summary>
-    public struct Palette
+    public static class Palette
     {
         #region Fields
-        /// <summary>Dark background.</summary>
-        public static Color Base03 = Palette.GetFromArgbHexadecimalColor("FF002B36");
-        /// <summary>Dark background highlight.</summary>
-        public static Color Base02 = Palette.GetFromArgbHexadecimalColor("FF073642");
-        /// <summary>Content "dark secondary" / "light emphasized".</summary>
-        public static Color Base01 = Palette.GetFromArgbHexadecimalColor("FF586E75");
-        /// <summary>Content "dark disabled" / " light primary".</summary>
-        public static Color Base00 = Palette.GetFromArgbHexadecimalColor("FF657B83");
-        /// <summary>Content "light disabled" / "dark primary".</summary>
-        public static Color Base0 = Palette.GetFromArgbHexadecimalColor("FF839496");
-        /// <summary>Content "light secondary" / "dark emphasized".</summary>
-        public static Color Base1 = Palette.GetFromArgbHexadecimalColor("FF93A1A1");
-        /// <summary>Light background highlight.</summary>
-        public static Color Base2 = Palette.GetFromArgbHexadecimalColor("FFEEE8D5");
-        /// <summary>Light background.</summary>
-        public static Color Base3 = Palette.GetFromArgbHexadecimalColor("FFFDF6E3");
-        /// <summary>The <see cref="Palette.Red"/> accent color.</summary>
-        public static Color Red = Palette.GetFromArgbHexadecimalColor("FFDC322F");
-        /// <summary>The <see cref="Palette.Orange"/> accent color.</summary>
-        public static Color Orange = Palette.GetFromArgbHexadecimalColor("FFCB4B16");
-        /// <summary>The <see cref="Palette.Yellow"/> accent color.</summary>
-        public static Color Yellow = Palette.GetFromArgbHexadecimalColor("FFB58900");
-        /// <summary>The <see cref="Palette.Green"/> accent color.</summary>
-        public static Color Green = Palette.GetFromArgbHexadecimalColor("FF859900");
-        /// <summary>The <see cref="Palette.Blue"/> accent color.</summary>
-        public static Color Blue = Palette.GetFromArgbHexadecimalColor("FF268BD2");
-        /// <summary>The <see cref="Palette.Cyan"/> accent color.</summary>
-        public static Color Cyan = Palette.GetFromArgbHexadecimalColor("FF2AA198");
-        /// <summary>The <see cref="Palette.Magenta"/> accent color.</summary>
-        public static Color Magenta = Palette.GetFromArgbHexadecimalColor("FFD33682");
-        /// <summary>The <see cref="Palette.Violet"/> accent color.</summary>
-        public static Color Violet = Palette.GetFromArgbHexadecimalColor("FF6C71C4");
-        #endregion
-        #region Methods
-        /// <summary>Gets the ARGB <see cref="System.Drawing.Color"/> in hexadecimal format.</summary>
-        /// <param name="color">The <see cref="System.String"/> that contains the ARGB data.</param>
-        /// <returns>The ARGB <see cref="System.Drawing.Color"/> .</returns>
-        private static Color GetFromArgbHexadecimalColor(string color) => Color.FromArgb(int.Parse(color, NumberStyles.HexNumber));
+        /// <summary>Content "light disabled" / "dark primary" color.</summary>
+        public static readonly Color Base0 = ColorTranslator.FromHtml("#839496");
+        /// <summary>Content "dark disabled" / " light primary" color.</summary>
+        public static readonly Color Base00 = ColorTranslator.FromHtml("#657B83");
+        /// <summary>Content "dark secondary" / "light emphasized" color.</summary>
+        public static readonly Color Base01 = ColorTranslator.FromHtml("#586E75");
+        /// <summary>Dark background highlight color.</summary>
+        public static readonly Color Base02 = ColorTranslator.FromHtml("#073642");
+        /// <summary>Dark background color.</summary>
+        public static readonly Color Base03 = ColorTranslator.FromHtml("#002B36");
+        /// <summary>Content "light secondary" / "dark emphasized" color.</summary>
+        public static readonly Color Base1 = ColorTranslator.FromHtml("#93A1A1");
+        /// <summary>Light background highlight color.</summary>
+        public static readonly Color Base2 = ColorTranslator.FromHtml("#EEE8D5");
+        /// <summary>Light background color.</summary>
+        public static readonly Color Base3 = ColorTranslator.FromHtml("#FDF6E3");
+        /// <summary>The blue accent color.</summary>
+        /// <remarks>Monotone.</remarks>
+        public static readonly Color Blue = ColorTranslator.FromHtml("#268BD2");
+        /// <summary>The cyan (Analogous) accent color.</summary>
+        /// <remarks>Triad.</remarks>
+        public static readonly Color Cyan = ColorTranslator.FromHtml("#2AA198");
+        /// <summary>The green accent color.</summary>
+        /// <remarks>Tetrad.</remarks>
+        public static readonly Color Green = ColorTranslator.FromHtml("#859900");
+        /// <summary>The magenta accent color.</summary>
+        /// <remarks>Tetrad.</remarks>
+        public static readonly Color Magenta = ColorTranslator.FromHtml("#D33682");
+        /// <summary>The orange accent color.</summary>
+        /// <remarks>Complement.</remarks>
+        public static readonly Color Orange = ColorTranslator.FromHtml("#CB4B16");
+        /// <summary>The red accent color.</summary>
+        /// <remarks>Triad.</remarks>
+        public static readonly Color Red = ColorTranslator.FromHtml("#DC322F");
+        /// <summary>The violet accent color.</summary>
+        /// <remarks>Analogous.</remarks>
+        public static readonly Color Violet = ColorTranslator.FromHtml("#6C71C4");
+        /// <summary>The yellow accent color.</summary>
+        /// <remarks>Split-complementary.</remarks>
+        public static readonly Color Yellow = ColorTranslator.FromHtml("#B58900");
         #endregion
     }
 }
